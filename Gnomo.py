@@ -520,55 +520,55 @@ async def npcs(ctx):
             embed.set_thumbnail(url="https://s3.amazonaws.com/files.d20.io/images/258673355/azF-Y-2uq7rk0j6jgfNaHw/med.jpg?1638645084")
             await ctx.send(embed=embed) 
         elif novalista[0].lower() == "esparda":
-            embed=discord.Embed(title="Jack Esparda", description="Um dos 6 generais do Governo Mundial.", color=0x6c25be)
+            embed=discord.Embed(title="Jack Esparda", description="Um dos 6 generais do Governo Mundial. De longe o mais honrado e experiente dos 6, conhecido pelo seu estilo de 2 Lâminas aperfeiçoado com o tempo", color=0x6c25be)
             embed.set_author(name="O Gnomo", icon_url="https://i.imgur.com/xR3qHfp.png")
             embed.set_footer(text="Habita em: Higalas Atual")
             embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/838535464439906314/1091452220903538729/image.png")
             await ctx.send(embed=embed)
         elif novalista[0].lower() == "nick":
-            embed=discord.Embed(title="Nick Punhos de Aço", description="Um dos 6 generais do Governo Mundial.", color=0x6c25be)
+            embed=discord.Embed(title="Nick Punhos de Aço", description="Um dos 6 generais do Governo Mundial. O mais velho de todos, e o que toma a posição de lider quando as coisas apertam. Sempre é lembrado por sua força estrondosa capaz de derrubar predios com simples socos", color=0x6c25be)
             embed.set_author(name="O Gnomo", icon_url="https://i.imgur.com/xR3qHfp.png")
             embed.set_footer(text="Habita em: Higalas Atual")
             embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/838535464439906314/1091452221436219574/image.png")
             await ctx.send(embed=embed)
         elif novalista[0].lower() == "karna":
-            embed=discord.Embed(title="Nick Punhos de Aço", description="Um dos 6 generais do Governo Mundial.", color=0x6c25be)
+            embed=discord.Embed(title="Karna Stradavarius", description="Um dos 6 generais do Governo Mundial. O mais estrategista dos 6, e raramente aparece pessoalmente para lutas, porém, nas poucas que apareceu dizem ter destrúido kilometros de terra por onde passava", color=0x6c25be)
             embed.set_author(name="O Gnomo", icon_url="https://i.imgur.com/xR3qHfp.png")
             embed.set_footer(text="Habita em: Higalas Atual")
             embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/838535464439906314/1091452221696249886/image.png")
             await ctx.send(embed=embed)
         elif novalista[0].lower() == "baki":
-            embed=discord.Embed(title="Baki Pugnala", description="Um dos 6 generais do Governo Mundial.", color=0x6c25be)
+            embed=discord.Embed(title="Baki Pugnala", description="Um dos 6 generais do Governo Mundial. Conhecido como o mais sanguinário dos 6, sempre dilacerando pessoas com suas lâminas por onde passa e conhecido pelo seu estilo de luta extremamente selvagem, sem deixar o oponente nem sequer atacar", color=0x6c25be)
             embed.set_author(name="O Gnomo", icon_url="https://i.imgur.com/xR3qHfp.png")
             embed.set_footer(text="Habita em: Higalas Atual")
             embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/838535464439906314/1091452222010839171/image.png")
             await ctx.send(embed=embed)
         elif novalista[0].lower() == "mike":
-            embed=discord.Embed(title="Mike Bardete", description="Um dos 6 generais do Governo Mundial.", color=0x6c25be)
+            embed=discord.Embed(title="Mike Bardete", description="Um dos 6 generais do Governo Mundial. Provavelmente o mais impulsivo, gosta de se divertir durante lutar e fazer um verdadeiro show enquanto executa seus oponentes.", color=0x6c25be)
             embed.set_author(name="O Gnomo", icon_url="https://i.imgur.com/xR3qHfp.png")
             embed.set_footer(text="Habita em: Higalas Atual")
             embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/838535464439906314/1091452222363156640/image.png")
             await ctx.send(embed=embed)
         elif novalista[0].lower() == "zeke":
-            embed=discord.Embed(title="Zeke", description="Um dos 6 generais do Governo Mundial.", color=0x6c25be)
+            embed=discord.Embed(title="Zeke", description="Um dos 6 generais do Governo Mundial. Um dos mais misteriosos, vindo diretamente do norte do mundo. Chama-se atenção a falta de sobrenome ou titulo, ele é apenas conhecido como Zeke. É o responsavel pela Marinha.", color=0x6c25be)
             embed.set_author(name="O Gnomo", icon_url="https://i.imgur.com/xR3qHfp.png")
             embed.set_footer(text="Habita em: Higalas Atual")
             embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/838535464439906314/1091452222723854536/image.png")
             await ctx.send(embed=embed)
         elif novalista[0].lower() == "hizaki":
-            embed=discord.Embed(title="Hizaki", description="Um dos 3 Almirantes da Marinha do Governo Mundial. Conhecido por ser calmo e pensar bastante antes de agir além de sempre analisar bastante o lado daquels que e", color=0x6c25be)
+            embed=discord.Embed(title="Hizaki", description="Um dos 3 Almirantes da Marinha do Governo Mundial. Reconhecivel pelo sua postura calma e debochada na maior parte do tempo", color=0x6c25be)
             embed.set_author(name="O Gnomo", icon_url="https://i.imgur.com/xR3qHfp.png")
             embed.set_footer(text="Habita em: Higalas Atual")
             embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/838535464439906314/1091453865087488070/image.png")
             await ctx.send(embed=embed)
         elif novalista[0].lower() == "kazaski":
-            embed=discord.Embed(title="Kazaski", description="Um dos 3 Almirantes da Marinha do Governo Mundial. Muito característico por seu senso de justiça quase imutavel, aonde acredita que não existe perdão para aqueles que se rebelaram contra a lei.", color=0x6c25be)
+            embed=discord.Embed(title="Kazaski", description="Um dos 3 Almirantes da Marinha do Governo Mundial. Muito característico por seu senso de justiça quase imutavel, aonde acredita que não existe perdão para aqueles que se rebelaram contra a lei além de uma postura sempre acima dos outros.", color=0x6c25be)
             embed.set_author(name="O Gnomo", icon_url="https://i.imgur.com/xR3qHfp.png")
             embed.set_footer(text="Habita em: Higalas Atual")
             embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/838535464439906314/1091453865381077154/image.png")
             await ctx.send(embed=embed)
         elif novalista[0].lower() == "aka":
-            embed=discord.Embed(title="Aka Menske", description="Um dos 3 Almirantes da Marinha do Governo Mundial. Conhecido por ser bem imparcial em seus julgamentos sobre o certo e errado, sempre tentando entender as coisas.", color=0x6c25be)
+            embed=discord.Embed(title="Aka Menske", description="Um dos 3 Almirantes da Marinha do Governo Mundial. Reconhecido facilmente pelo seu método de luta, que envolve misturar sua marca com seus sopros", color=0x6c25be)
             embed.set_author(name="O Gnomo", icon_url="https://i.imgur.com/xR3qHfp.png")
             embed.set_footer(text="Habita em: Higalas Atual")
             embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/838535464439906314/1091453866152825064/image.png")
@@ -668,8 +668,7 @@ async def orgs(ctx):
                 + "Existem 3 **Almirantes**:\n\n"
                 + "● Hizaki\n"
                 + "● Kazaski\n"
-                + "● Aka Mesnke\n\n"
-                + "Existem também vice-almirantes", color=0x6c25be)
+                + "● Aka Mesnke\n\n", color=0x6c25be)
             embed.set_author(name="O Gnomo", icon_url="https://i.imgur.com/xR3qHfp.png")
             embed.set_footer(text="Opera em: Higalas Bélica")
             embed.set_thumbnail(url="")
@@ -689,4 +688,4 @@ async def orgs(ctx):
 async def jack(ctx):
     await ctx.send("Ta apaixonado cara???")
  
-bot.run("MTA2ODc0NzgzMDY3MzU0NzI3NA.GXaqwI.HjjI871Q0yvLXG04D_1QU2MqanXlV9WuZ0EXmE")
+bot.run("###")
