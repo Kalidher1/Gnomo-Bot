@@ -184,7 +184,7 @@ async def precos(ctx):
 @bot.command()
 async def ajuda(ctx):
     embed=discord.Embed(title="Comandos do Gnomo", description="Temos os seguintes comandos do GNOMO BOT", color=0x6c25be)
-    embed.add_field(name = "Geral", value ="⠀\n● !Ajuda = Mostra os comandos do Gnomo\n" 
+    embed.add_field(name = "Geral", value ="⠀\n● !ajuda = Mostra os comandos do Gnomo\n" 
                     + "● !oqueévocê = Digo quem eu sou!\n"
                     + "● !sugestão = Manda uma sugestão para o Gnomo Bot!\n", inline = True) 
     embed.add_field(name = "Entretenimento", value ="⠀\n● !vigarista = Minha defesa pessoal contra acusações\n ● !morra = morro\n", inline = True)          
@@ -313,7 +313,7 @@ async def tesouro(ctx):
     
     if len(listaT)>0:
         if listaT[0] == "adicionar":
-            file = open('C:\\Users\\Gustavo\\Documents\\Gnomo\\Tesouro.txt','a')
+            file = open('C:\\Users\\Gustavo\\Documents\\Gnomo\\TesouroPiratas.txt','a')
             listaT.remove("adicionar")
             for i in listaT:
                 file.write(i+" ")
@@ -321,7 +321,7 @@ async def tesouro(ctx):
             file.close()
             await ctx.send("Item " + " ".join(listaT) + " adicionado com sucesso ao tesouro da party!")
         elif listaT[0] == "add":
-                file = open('C:\\Users\\Gustavo\\Documents\\Gnomo\\Tesouro.txt','a')
+                file = open('C:\\Users\\Gustavo\\Documents\\Gnomo\\TesouroPiratastxt','a')
                 listaT.remove("add")
                 for i in listaT:
                     file.write(i+" ")
@@ -329,7 +329,7 @@ async def tesouro(ctx):
                     file.close()
                 await ctx.send("Item " + " ".join(listaT) + " adicionado com sucesso ao tesouro da party!")      
         elif listaT[0] == "ver": 
-            file = open('C:\\Users\\Gustavo\\Documents\\Gnomo\\Tesouro.txt','r')
+            file = open('C:\\Users\\Gustavo\\Documents\\Gnomo\\TesouroPiratas.txt','r')
             lista = []
             for x in file:
                 lista.append(x.replace("\n", "")) 
@@ -685,7 +685,100 @@ async def orgs(ctx):
         await ctx.send(embed=embed)
     
 @bot.command()
+async def inv(ctx):
+    """
+    !inv   
+    """
+    novalista = str(ctx.message.content).replace("!inv","",).split(" ")
+    if len(novalista) == 1:
+        with open("data.txt", "r") as f:
+            data = f.read()
+            coisas = data.split("\n")
+        del coisas[-1]
+        mensagem = ""
+        for item in coisas:
+            mensagem += f"● {item}\n"
+        embed=discord.Embed(title="Inventário do Navio", description=("Aqui estão os itens que atualmente estão dentro do navio:\n\n" + mensagem + "\n \n __**Use add ou sub para adicionar ou subtrair materiais do navio, respectivamente**__"), color=0x6c25be)
+        embed.set_author(name="Navio", icon_url="https://i.imgur.com/xR3qHfp.png")
+        embed.set_footer(text="carai mó pobre")
+        embed.set_thumbnail(url="https://img6.arthub.ai/63e1834e-ba8d.webp")
+        await ctx.send(embed=embed)
+    else:
+        del novalista[0] 
+        with open("C:\\Users\\Gustavo\\Documents\\Gnomo\\data.txt", "r") as f:
+                data = f.read()
+                coisas = data.split("\n")
+                del coisas[-1]
+                dados = []
+                for coisa in coisas:
+                    coisa = coisa.split(" ")
+                    del coisa[1]
+                    dados.append(coisa)
+                material = novalista[1]
+                operacao = novalista[0]
+                quantidade = int(novalista[2])
+                resultado = -1
+                for i in range(len(coisas)):
+                    if dados[i][0] == material:
+                        resultado = i
+                if operacao.lower() == "add":
+                    if resultado == -1:
+                        novoMaterial = [material, str(quantidade)]
+                        dados.append(novoMaterial)
+                    else:
+                        dados[resultado][1] = str(int(dados[resultado][1]) + quantidade)
+                        embed=discord.Embed(title="Inventário do Navio", description= ("*" + str(quantidade) + " " + dados[resultado][0] + "*" + "s foram adicionados/as a Carga do Navio, totalizando " + "*" + dados[resultado][1] + " " + dados[resultado][0] + "*"), color=0x6c25be)
+                        embed.set_author(name="", icon_url="https://i.imgur.com/xR3qHfp.png")
+                        embed.set_footer(text="Carga do Barco")
+                        embed.set_thumbnail(url="https://img6.arthub.ai/63e1834e-ba8d.webp")
+                        await ctx.send(embed=embed)
+
+                elif operacao.lower() == "sub":
+                    if resultado == -1:
+                        embed=discord.Embed(title="Inventário do Navio", description="Este recurso não existe no banco de dados", color=0x6c25be)
+                        embed.set_author(name="", icon_url="https://i.imgur.com/xR3qHfp.png")
+                        embed.set_footer(text="otario porco")
+                        embed.set_thumbnail(url="https://img6.arthub.ai/63e1834e-ba8d.webp")
+                        await ctx.send(embed=embed)
+                    else:
+                        
+                        if int(dados[resultado][1]) < 0:
+                            embed=discord.Embed(title="Inventário do Navio", description="COMO CARALHOS TU QUER DEVER MATERIAL???????", color=0x6c25be)
+                            embed.set_author(name="", icon_url="https://i.imgur.com/xR3qHfp.png")
+                            embed.set_footer(text="otario porco")
+                            embed.set_thumbnail(url="https://img6.arthub.ai/63e1834e-ba8d.webp")
+                            await ctx.send(embed=embed)
+                        else:
+                            dados[resultado][1] = str(int(dados[resultado][1]) - quantidade)
+                            embed=discord.Embed(title="Inventário do Navio", description= ("*" + str(quantidade) + " " + dados[resultado][0] + "*" + "s foram retirados/as a Carga do Navio, totalizando " + "*" + dados[resultado][1] + " " + dados[resultado][0] + "*"), color=0x6c25be)
+                            embed.set_author(name="", icon_url="https://i.imgur.com/xR3qHfp.png")
+                            embed.set_footer(text="Carga do Barco")
+                            embed.set_thumbnail(url="https://img6.arthub.ai/63e1834e-ba8d.webp")
+                            await ctx.send(embed=embed)
+                else:
+                    embed=discord.Embed(title="Inventário do Navio", description="Use add ou sub para adicionar ou subtrair materiais do navio, respectivamente", color=0x6c25be)
+                    embed.set_author(name="", icon_url="https://i.imgur.com/xR3qHfp.png")
+                    embed.set_footer(text="otario porco")
+                    embed.set_thumbnail(url="https://img6.arthub.ai/63e1834e-ba8d.webp")
+                    await ctx.send(embed=embed)
+                with open("data.txt", "w") as f:
+                    for item in dados:
+                        if int(item[1]) > 0:
+                            f.write(item[0] + " = ")
+                            f.write(item[1] + "\n")
+                        
+@bot.command()
+async def lore(ctx):
+    """
+    !lore   
+    """
+    embed=discord.Embed(title = "Link para a lore", description="https://1drv.ms/w/s!AocpWuY1u4QWg9AlNZIq2YTeenzZQA?e=uJLMYg")
+    embed.set_author(name="O Gnomo", icon_url="https://i.imgur.com/xR3qHfp.png")
+    embed.set_footer(text="Aqui está :>")
+    await ctx.send(embed=embed)
+
+@bot.command()
 async def jack(ctx):
     await ctx.send("Ta apaixonado cara???")
  
-bot.run("###")
+bot.run("TOKEN")
